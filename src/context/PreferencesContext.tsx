@@ -8,8 +8,8 @@ type StatePreferences = {
 }
 
 export const PreferencesContext = React.createContext<StatePreferences>({
-  preferences: config.preferences,
-  setPreferences: () => undefined
+	preferences: config.preferences,
+	setPreferences: () => undefined
 })
 
 type Props = {
@@ -18,11 +18,11 @@ type Props = {
 
 export const PreferencesProvider = ({ children }: Props) => {
 
-  const [preferences, setPreferences] = useState<Preferences>(config.preferences);
+	const [preferences, setPreferences] = useState<Preferences>(config.preferences)
 
-  return (
-    <PreferencesContext.Provider value={{ preferences, setPreferences }}>
-      { children }
-    </PreferencesContext.Provider>
-  )
+	return (
+		<PreferencesContext.Provider value={{ preferences, setPreferences }}>
+			{ children }
+		</PreferencesContext.Provider>
+	)
 }

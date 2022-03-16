@@ -11,25 +11,25 @@ type Props = {
 
 const StartPanel = ({ startGame, ...props }: Props) => {
   
-  return (
-    <Stack as={Container} >
-      <InstructionsPanel />
-      <DifficultyPanel />
-      <CategoriesPanel />      
-      <Box textAlign='right'>
-        <Button
-            { ...props }
-            loadingText='Loading...'
-            colorScheme='cyan'
-            color='white'
-            variant='solid'
-            spinnerPlacement='end'
-            onClick={ startGame }>
+	return (
+		<Stack as={Container} >
+			<InstructionsPanel />
+			<DifficultyPanel />
+			<CategoriesPanel />      
+			<Box textAlign='right'>
+				<Button
+					{ ...props }
+					loadingText='Loading...'
+					colorScheme='cyan'
+					color='white'
+					variant='solid'
+					spinnerPlacement='end'
+					onClick={ startGame }>
             START QUIZ
-        </Button>
-      </Box> 
-    </Stack>
-  )
+				</Button>
+			</Box> 
+		</Stack>
+	)
 }
 
 export default StartPanel

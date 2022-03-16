@@ -14,20 +14,20 @@ type Props = {
 
 const Question = ({ title, currentNumberQuestion }: Props) => {
 
-  const { preferences } = useContext(PreferencesContext)
+	const { preferences } = useContext(PreferencesContext)
 
-  return (
-    <>
-      <Text color='white' fontWeight='bold' fontSize='3xl'>
+	return (
+		<>
+			<Text color='white' fontWeight='bold' fontSize='3xl'>
         Question: { currentNumberQuestion + 1 } / { config.totalQuestions }
-      </Text>
-      <Text color='#12c69d' fontWeight='bold' fontSize='sm' casing='uppercase'>
-        { preferences.nameCategory }
-      </Text>
-      <Divider marginTop='2' marginBottom='4'/>
-      <Text color='white' fontWeight='bold' dangerouslySetInnerHTML={{ __html: title }}></Text>
-    </>
-  )
+			</Text>
+			<Text color='#12c69d' fontWeight='bold' fontSize='sm' casing='uppercase'>
+				{ preferences.nameCategory }
+			</Text>
+			<Divider marginTop='2' marginBottom='4'/>
+			<Text color='white' fontWeight='bold' dangerouslySetInnerHTML={{ __html: title }}></Text>
+		</>
+	)
 }
 
 export default Question

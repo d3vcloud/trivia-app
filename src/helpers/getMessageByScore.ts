@@ -5,8 +5,8 @@ import ConfusedImage from 'assets/images/confused.png'
 
 export const getMessageByScore = (score: number) => {
 
-  if(score === config.totalQuestions) return { message: 'Congratulations', image: HappyImage }
-  else if(score > 4) return { message: 'Keep Trying!', image: ConfusedImage }
+	if(score === config.totalQuestions) return { message: 'Congratulations', image: HappyImage }
+	else if(score > 4) return { message: 'Keep Trying!', image: ConfusedImage }
   
-  return { message: 'You Lose', image: SadImage }
+	return { message: 'You Lose', image: SadImage }
 }
