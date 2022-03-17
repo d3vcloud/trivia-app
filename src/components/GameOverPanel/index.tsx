@@ -11,35 +11,32 @@ type Props = {
 }
 
 const GameOverPanel = ({ score, nextQuiz }: Props) => {
+  const messageByScore = getMessageByScore(score)
 
-	const messageByScore = getMessageByScore(score)
-
-	return (
-		<Flex flexDirection='column' alignItems='center' mt={10}>
-			<Image
-				boxSize='150px'
-				objectFit='cover'
-				src={ messageByScore.image }
-				alt={ messageByScore.message }/>
-			<Heading as='h1' size='xl' mt={6} mb={6} color='white' fontWeight='bold'>
-				{ messageByScore.message }
-			</Heading>
-			<Text color='white' fontWeight='bold' letterSpacing='3px'>
+  return (
+    <Flex flexDirection="column" alignItems="center" mt={10}>
+      <Image
+        boxSize="150px"
+        objectFit="cover"
+        src={messageByScore.image}
+        alt={messageByScore.message}
+      />
+      <Heading as="h1" size="xl" mt={6} mb={6} color="white" fontWeight="bold">
+        {messageByScore.message}
+      </Heading>
+      <Text color="white" fontWeight="bold" letterSpacing="3px">
         YOUR SCORE
-			</Text>
-			<Text color='white' fontWeight='bold' letterSpacing='3px' fontSize='50px'>
-				{ score } / { config.totalQuestions }
-			</Text>
-			<Flex mt={10}>
-				<Button
-					colorScheme='cyan'
-					color='white'
-					onClick={ nextQuiz }>
+      </Text>
+      <Text color="white" fontWeight="bold" letterSpacing="3px" fontSize="50px">
+        {score} / {config.totalQuestions}
+      </Text>
+      <Flex mt={10}>
+        <Button colorScheme="cyan" color="white" onClick={nextQuiz}>
           Take New Quiz
-				</Button>
-			</Flex>
-		</Flex>
-	)
+        </Button>
+      </Flex>
+    </Flex>
+  )
 }
 
 export default GameOverPanel

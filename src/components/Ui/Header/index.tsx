@@ -6,16 +6,13 @@ type Props = {
 }
 
 const Header = ({ content }: Props) => {
-	return (
-		<Stack as={Container} textAlign={'center'}>
-			<Heading  
-				fontSize='4xl' 
-				color='#12c69d'
-				mb={10}>
-				{ content }
-			</Heading>
-		</Stack>
-	)
+  return (
+    <Stack as={Container} textAlign={'center'}>
+      <Heading fontSize="4xl" color="#12c69d" mb={10}>
+        {content}
+      </Heading>
+    </Stack>
+  )
 }
 
 export default Header

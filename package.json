@@ -9,7 +9,8 @@
     "build": "tsc && vite build",
     "serve": "vite preview",
     "lint:fix": "eslint ./src --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "prettier": "prettier . --write"
   },
   "dependencies": {
     "@chakra-ui/icons": "1.1.1",
@@ -30,7 +31,9 @@
     "@typescript-eslint/parser": "^5.15.0",
     "@vitejs/plugin-react": "^1.0.0",
     "eslint": "8.11.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.29.4",
+    "prettier": "^2.6.0",
     "typescript": "4.3.2",
     "vite": "^2.6.4",
     "vite-plugin-eslint": "^1.3.0",

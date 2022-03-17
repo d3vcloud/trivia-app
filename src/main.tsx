@@ -7,10 +7,10 @@ import { PreferencesProvider } from './context/PreferencesContext'
 import App from './App'
 
 ReactDOM.render(
-	<ChakraProvider>
-		<PreferencesProvider>
-			<App />
-		</PreferencesProvider>
-	</ChakraProvider>,
-	document.getElementById('root')
+  <ChakraProvider>
+    <PreferencesProvider>
+      <App />
+    </PreferencesProvider>
+  </ChakraProvider>,
+  document.getElementById('root')
 )

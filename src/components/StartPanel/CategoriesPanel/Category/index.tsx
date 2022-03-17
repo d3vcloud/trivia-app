@@ -15,28 +15,37 @@ type Props = {
 }
 
 const Category = ({ id, name, icon }: Props) => {
+  const { preferences, setPreferences } = useContext(PreferencesContext)
 
-	const { preferences, setPreferences } = useContext(PreferencesContext)
+  const isSelected = preferences.idCategory === id
 
-	const isSelected = preferences.idCategory === id
-  
-	return (
-		<MotionStack as='button' 
-			border={ isSelected ? '2px' : '1px' }
-			borderRadius='15px'
-			borderColor={ isSelected ? '#12c69d' : '#ccd0d5'}
-			backgroundColor={ isSelected ? 'rgba(144, 205, 244, 0.20)' : ''}
-			padding='6px'
-			align='center'
-			justify='center'
-			onClick={ () =>  setPreferences((prevPref) => ({ ...prevPref, idCategory: id, nameCategory: name }))}
-			whileHover={{ scale: 1.1 }}>
-			<Flex mb={1}>
-				<Image src={ icon } alt={ name } width='24' height='24' />
-			</Flex>
-			<Text fontWeight={600} color='white'>{ name }</Text>
-		</MotionStack>
-	)
+  return (
+    <MotionStack
+      as="button"
+      border={isSelected ? '2px' : '1px'}
+      borderRadius="15px"
+      borderColor={isSelected ? '#12c69d' : '#ccd0d5'}
+      backgroundColor={isSelected ? 'rgba(144, 205, 244, 0.20)' : ''}
+      padding="6px"
+      align="center"
+      justify="center"
+      onClick={() =>
+        setPreferences((prevPref) => ({
+          ...prevPref,
+          idCategory: id,
+          nameCategory: name
+        }))
+      }
+      whileHover={{ scale: 1.1 }}
+    >
+      <Flex mb={1}>
+        <Image src={icon} alt={name} width="24" height="24" />
+      </Flex>
+      <Text fontWeight={600} color="white">
+        {name}
+      </Text>
+    </MotionStack>
+  )
 }
 
 export default Category

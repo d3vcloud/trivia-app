@@ -20,59 +20,60 @@ type Props = {
 }
 
 const QuestionCard = ({
-	question,
-	alternatives,
-	checkAnswer,
-	leftGame,
-	nextQuestion,
-	userAnswer,
-	currentNumberQuestion,
-	isDisabled
+  question,
+  alternatives,
+  checkAnswer,
+  leftGame,
+  nextQuestion,
+  userAnswer,
+  currentNumberQuestion,
+  isDisabled
 }: Props) => {
-
-	return (
-		<Stack as={Container}>
-			<Box mb='6'>
-				<Question
-					title={question}
-					currentNumberQuestion={currentNumberQuestion}
-				/>
-			</Box>
-			<Box mb='4'>
-				{
-					<Stack spacing='2'>
-						{alternatives?.map((alternative, index) => (
-							<Alternative
-								key={index}
-								title={alternative}
-								checkAnswer={checkAnswer}
-								isCorrect={userAnswer?.correct_answer === alternative}
-								isUserClicked={userAnswer?.userAnswer === alternative}
-								isDisabled={Boolean(userAnswer)}
-							/>
-						))}
-					</Stack>
-				}
-			</Box>
-			<Flex>
-				<Button
-					backgroundColor='gray.200'
-					leftIcon={<ArrowBackIcon />}
-					onClick={leftGame}>
+  return (
+    <Stack as={Container}>
+      <Box mb="6">
+        <Question
+          title={question}
+          currentNumberQuestion={currentNumberQuestion}
+        />
+      </Box>
+      <Box mb="4">
+        {
+          <Stack spacing="2">
+            {alternatives?.map((alternative, index) => (
+              <Alternative
+                key={index}
+                title={alternative}
+                checkAnswer={checkAnswer}
+                isCorrect={userAnswer?.correct_answer === alternative}
+                isUserClicked={userAnswer?.userAnswer === alternative}
+                isDisabled={Boolean(userAnswer)}
+              />
+            ))}
+          </Stack>
+        }
+      </Box>
+      <Flex>
+        <Button
+          backgroundColor="gray.200"
+          leftIcon={<ArrowBackIcon />}
+          onClick={leftGame}
+        >
           Quit Quiz
-				</Button>
-				<Spacer />
-				<Button
-					colorScheme='cyan'
-					rightIcon={<ArrowForwardIcon />}
-					onClick={nextQuestion}
-					color='white'
-					isDisabled={ isDisabled }>
+        </Button>
+        <Spacer />
+        <Button
+          colorScheme="cyan"
+          rightIcon={<ArrowForwardIcon />}
+          onClick={nextQuestion}
+          color="white"
+          isDisabled={isDisabled}
+        >
           Next
-				</Button>
-			</Flex>
-		</Stack>
-	)
+        </Button>
+      </Flex>
+    </Stack>
+  )
 }
 
 export default QuestionCard
