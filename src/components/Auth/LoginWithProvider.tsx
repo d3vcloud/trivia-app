@@ -11,8 +11,17 @@ import {
   Box,
   Divider
 } from '@chakra-ui/react'
+import { signInWithFacebook, signInWithGoogle } from 'supabase/services/auth'
 
 const LoginWithProvider: React.FC = () => {
+  const handleLoginGoogle = async () => {
+    await signInWithGoogle()
+  }
+
+  const handleLoginFacebook = async () => {
+    await signInWithFacebook()
+  }
+
   return (
     <Flex minH={'100vh'} align={'center'} justify={'center'}>
       <Stack
@@ -22,7 +31,6 @@ const LoginWithProvider: React.FC = () => {
         rounded={'xl'}
         boxShadow={'lg'}
         p={6}
-        // my={12}
         bg="gray.900"
       >
         <Heading
@@ -38,14 +46,19 @@ const LoginWithProvider: React.FC = () => {
           Choose your favorite social media
         </Text> */}
         {/* Facebook */}
-        <Button w={'full'} colorScheme={'facebook'} leftIcon={<FaFacebook />}>
+        <Button
+          w={'full'}
+          colorScheme={'facebook'}
+          leftIcon={<FaFacebook />}
+          onClick={handleLoginFacebook}
+        >
           <Center>
             <Text>Continue with Facebook</Text>
           </Center>
         </Button>
 
         {/* Google */}
-        <Button w={'full'} leftIcon={<FcGoogle />}>
+        <Button w={'full'} leftIcon={<FcGoogle />} onClick={handleLoginGoogle}>
           <Text>Sign in with Google</Text>
         </Button>
         <Divider mb="2rem" />
